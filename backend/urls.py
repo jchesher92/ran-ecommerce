@@ -30,8 +30,8 @@ urlpatterns = [
     path('api/users/', include('base.urls.user_urls')),
     path('api/orders/', include('base.urls.order_urls')),
 
-    path('api/custom/', include('base.urls.custom_urls')),
-    re_path(r'^.*$', index) # <-- have this come last using re path.
+    path('api/custom/', include('base.urls.custom_urls'))
 ]
 
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+urlpatterns += [re_path(r'^.*$', index)]

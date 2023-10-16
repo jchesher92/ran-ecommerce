@@ -65,7 +65,7 @@ def createGuitarReview(request, pk):
     for i in reviews:
       total += i.rating
     
-    guiar.rating = total / len(reviews)
+    guitar.rating = total / len(reviews)
     guitar.save()
 
     return Response('Review Added')

@@ -8,7 +8,7 @@ import store from './store'
 import './styles/bootstrap.min.css'
 import './styles/index.css'
 import App from './App'
-import reportWebVitals from './reportWebVitals'
+
 
 
 const root = ReactDOM.createRoot(document.getElementById('root'))
@@ -17,5 +17,3 @@ root.render(
     <App />
   </Provider>
 )
-
-// reportWebVitals()
