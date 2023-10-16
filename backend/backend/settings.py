@@ -109,7 +109,7 @@ ROOT_URLCONF = 'backend.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [os.path.join(BASE_DIR, 'client/build')] #Look, we have added the root folder of frontend here
+        'DIRS': [os.path.join(BASE_DIR, 'client')] #Look, we have added the root folder of frontend here
         ,
         'APP_DIRS': True,
         'OPTIONS': {
@@ -173,6 +173,7 @@ USE_TZ = True
 
 STATIC_URL = 'static/'
 MEDIA_URL = '/images/'
+ROOT_URLCONF = 'project.urls' #check if you have this already, if not add it in
 
 STATICFILES_DIRS = [
   BASE_DIR / 'static',
@@ -188,8 +189,8 @@ CORS_ALLOW_ALL_ORIGINS = True
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-# STATICFILES_DIRS = (
-#     os.path.join(BASE_DIR, 'client', "build", "static"),
-# )
+STATICFILES_DIRS = (
+    os.path.join(BASE_DIR, 'client', "build", "static"),
+)
 
 # django_on_heroku.settings(locals())
