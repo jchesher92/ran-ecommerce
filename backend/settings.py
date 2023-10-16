@@ -173,7 +173,6 @@ USE_TZ = True
 
 STATIC_URL = 'static/'
 MEDIA_URL = '/images/'
-ROOT_URLCONF = 'project.urls' #check if you have this already, if not add it in
 STATIC_ROOT = BASE_DIR / "staticfiles"
 
 STATICFILES_DIRS = [
