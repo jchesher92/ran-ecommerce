@@ -8,6 +8,36 @@ class Guitar(models.Model):
   name = models.CharField(max_length=200, null=True, blank=True)
   image = models.ImageField(null=True, blank=True)
   description = models.TextField(null=True, blank=True)
+
+  # SPECIFICATIONS
+  bodyShape = models.CharField(max_length=200, null=True, blank=True)
+  construction = models.CharField(max_length=200, null=True, blank=True)
+  scaleLength = models.DecimalField(max_digits=3, decimal_places=1, null=True, blank=True)
+  bodyMaterial = models.CharField(max_length=200, null=True, blank=True)
+  finish = models.CharField(max_length=200, null=True, blank=True)
+  headstockShape = models.CharField(max_length=200, null=True, blank=True)
+  neckMaterial = models.CharField(max_length=200, null=True, blank=True)
+  fingerboardMaterial = models.CharField(max_length=200, null=True, blank=True)
+  numOfFrets = models.IntegerField(null=True, blank=True, default=0)
+  fretSize = models.CharField(max_length=200, null=True, blank=True)
+  inlays = models.CharField(max_length=200, null=True, blank=True)
+  sideInlays = models.CharField(max_length=200, null=True, blank=True)
+  nut = models.CharField(max_length=200, null=True, blank=True)
+  hardwareColour = models.CharField(max_length=200, null=True, blank=True)
+  bridgeSystem = models.CharField(max_length=200, null=True, blank=True)
+  tuningMachines = models.CharField(max_length=200, null=True, blank=True)
+  straps = models.CharField(max_length=200, null=True, blank=True)
+  pickups = models.CharField(max_length=200, null=True, blank=True)
+  controls = models.CharField(max_length=200, null=True, blank=True)
+  otherControls = models.CharField(max_length=200, null=True, blank=True)
+
+  # NECK SPECIFICATIONS
+  widthAtNutand24thFret = models.CharField(max_length=200, null=True, blank=True)
+  thicknessAt1stand12thFret = models.CharField(max_length=200, null=True, blank=True)
+  fingerboardRadius = models.IntegerField(null=True, blank=True, default=0)
+  backShape = models.CharField(max_length=200, null=True, blank=True)
+
+  # STORE DETAILS
   rating = models.DecimalField(max_digits=7, decimal_places=2, null=True, blank=True)
   numReviews = models.IntegerField(null=True, blank=True, default=0)
   price = models.DecimalField(max_digits=7, decimal_places=2, null=True, blank=True)
@@ -24,6 +54,7 @@ class Review(models.Model):
   name = models.CharField(max_length=200, null=True, blank=True)
   rating = models.IntegerField(null=True, blank=True, default=0)
   comment = models.TextField(null=True, blank=True)
+  createdAt = models.DateTimeField(auto_now_add=True)
   _id = models.AutoField(primary_key=True, editable=False)
 
   def __str__(self):
@@ -68,3 +99,63 @@ class ShippingAddress(models.Model):
 
   def __str__(self):
     return str(self.address)
+  
+
+
+class CustomGuitar(models.Model):
+  # SPECIFICATIONS
+  numOfStrings = models.CharField(max_length=200, null=True, blank=True)
+  rlHanded = models.CharField(max_length=200, null=True, blank=True)
+  scaleLength = models.CharField(max_length=200, null=True, blank=True)
+  construction = models.CharField(max_length=200, null=True, blank=True)
+  bodyShape = models.CharField(max_length=200, null=True, blank=True)
+  bodyMaterial = models.CharField(max_length=200, null=True, blank=True)
+  topWoodOptions = models.CharField(max_length=200, null=True, blank=True)
+  bodyBinding = models.CharField(max_length=200, null=True, blank=True)
+  bindingMaterial = models.CharField(max_length=200, null=True, blank=True)
+  finish = models.CharField(max_length=200, null=True, blank=True)
+  headstockShape = models.CharField(max_length=200, null=True, blank=True)
+  headstock = models.CharField(max_length=200, null=True, blank=True)
+  headstockFinish = models.CharField(max_length=200, null=True, blank=True)
+  headstockBinding = models.CharField(max_length=200, null=True, blank=True)
+  trussRodCover = models.CharField(max_length=200, null=True, blank=True)
+  logo = models.CharField(max_length=200, null=True, blank=True)
+  neckMaterial = models.CharField(max_length=200, null=True, blank=True)
+  neckShape = models.CharField(max_length=200, null=True, blank=True)
+  nutWidth6 = models.CharField(max_length=200, null=True, blank=True)
+  nutWidth7 = models.CharField(max_length=200, null=True, blank=True)
+  nutWidth8 = models.CharField(max_length=200, null=True, blank=True)
+  thicknessAt1stand12thFret = models.CharField(max_length=200, null=True, blank=True)
+  neckFinish = models.CharField(max_length=200, null=True, blank=True)
+  # fingerboardMaterial = models.CharField(max_length=200, null=True, blank=True)
+  # fingerboardBinding = models.CharField(max_length=200, null=True, blank=True)
+  # numOfFrets = models.IntegerField(null=True, blank=True, default=0)
+  # fretSize = models.CharField(max_length=200, null=True, blank=True)
+  # fingerboardRadius = models.IntegerField(null=True, blank=True, default=0)
+  # inlays = models.CharField(max_length=200, null=True, blank=True)
+  # customInlays = models.CharField(max_length=200, null=True, blank=True)
+  # sideInlays = models.CharField(max_length=200, null=True, blank=True)
+  # nut = models.CharField(max_length=200, null=True, blank=True)
+  # hardwareColour = models.CharField(max_length=200, null=True, blank=True)
+  # bridgeSystem6 = models.CharField(max_length=200, null=True, blank=True)
+  # bridgeSystem7 = models.CharField(max_length=200, null=True, blank=True)
+  # bridgeSystem8 = models.CharField(max_length=200, null=True, blank=True)
+  # tuningMachines = models.CharField(max_length=200, null=True, blank=True)
+  # straplocks = models.CharField(max_length=200, null=True, blank=True)
+  # neckPickup = models.CharField(max_length=200, null=True, blank=True)
+  # middlePickup = models.CharField(max_length=200, null=True, blank=True)
+  # bridgePickup = models.CharField(max_length=200, null=True, blank=True)
+  # pickupRings = models.CharField(max_length=200, null=True, blank=True)
+  # controlKnobs = models.CharField(max_length=200, null=True, blank=True)
+  # pickupSelector = models.CharField(max_length=200, null=True, blank=True)
+  # otherControls = models.CharField(max_length=200, null=True, blank=True)
+  # flightCase = models.CharField(max_length=200, null=True, blank=True)
+  # additionalInstructions = models.CharField(max_length=200, null=True, blank=True)
+
+  # STORE DETAILS
+  _id = models.AutoField(primary_key=True, editable=False)
+  price = models.DecimalField(max_digits=7, decimal_places=2, null=True, blank=True)
+  createdAt = models.DateTimeField(auto_now_add=True)
+
+  def __str__(self):
+    return str(self.createdAt)
